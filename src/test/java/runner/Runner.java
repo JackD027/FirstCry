@@ -24,7 +24,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
  
 //@RunWith(Cucumber.class)
-@CucumberOptions(features= {"src/test/resources/features/Login.feature"},
+@CucumberOptions(features= {"src/test/resources/features"},
 glue={"steps","pages.base"},
 plugin= {"pretty","html:target/HTMLReport.html",
 		"json:target/JSONReport.json","junit:target/stepReport.xml",
