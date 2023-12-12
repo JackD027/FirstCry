@@ -9,5 +9,5 @@ Feature: To test store locator functionality
 
     Examples:
       | StoreType | State | City |
-      |FirstCry|Uttar Pradesh|Parayagraj Civil Lines|
+      |FirstCry|Uttar Pradesh|Prayagraj Civil Lines|
 

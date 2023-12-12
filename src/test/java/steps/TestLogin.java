@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.junit.Assert;
+import org.testng.*;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;

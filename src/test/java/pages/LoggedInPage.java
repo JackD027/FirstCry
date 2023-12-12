@@ -28,8 +28,7 @@ public class LoggedInPage {
 	@FindBy(xpath = "//a[@href='https://www.firstcry.com/footwear/6/170?scat=170@~416@@@@@@@@@1@0@20@@@@@@@@@@&ref2=menu_dd_footwear_casual-shoes_H' and @title='Casual Shoes' and @class='M13_75']")
 	public static WebElement CasualShoes;
 
-	@FindBy(xpath = "(//div[@class='list_img wifi'])[1]")
-	public static WebElement ProductLink;
+	
 
 	@FindBy(xpath = "(//span[@class='size-option pos-rel2stat R14_42'])[1]")
 	public static WebElement SelectSize;
@@ -54,7 +53,8 @@ public class LoggedInPage {
 	
 	@FindBy(xpath = "(//span[@class='anch'])[2]")
 	public static WebElement storesAndPreSchool;
-	
+	@FindBy(xpath = "(//div[@class='list_img wifi'])[1]")
+	public static WebElement ProductLink;
 	@FindBy(xpath = "//a[@href='https://www.firstcryintellitots.com/preschool-locator/?ref2=topstrip\' and @class='R12_61']")
 	public static WebElement preSchoolElement;
 	
@@ -116,7 +116,6 @@ public class LoggedInPage {
 	public WebElement orderStatus;
 	
 	public LoggedInPage(WebDriver driver) {
-	    super();
 	    this.driver = driver;
 	    PageFactory.initElements(driver, this);
 	}
@@ -173,7 +172,7 @@ public class LoggedInPage {
 		while(Integer.valueOf(year.getText())>Integer.valueOf(yearString)){
 			goLeft.click();
 		}
-		while(Integer.valueOf(year.getText())>Integer.valueOf(yearString)){
+		while(Integer.valueOf(year.getText())<Integer.valueOf(yearString)){
 			goRight.click();
 		}
 		

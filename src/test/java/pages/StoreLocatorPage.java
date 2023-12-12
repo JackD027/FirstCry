@@ -28,7 +28,6 @@ public class StoreLocatorPage {
 	public WebElement verifyLocation;
 	
 	public StoreLocatorPage(WebDriver driver) {
-	    super();
 	    this.driver = driver;
 	    PageFactory.initElements(driver, this);
 	}

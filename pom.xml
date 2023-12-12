@@ -20,13 +20,7 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-			<scope>test</scope>
-		</dependency>
-
+		<!--https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
@@ -38,16 +32,15 @@
 			<version>7.7.1</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-junit</artifactId>
+			<artifactId>cucumber-testng</artifactId>
 			<version>7.10.1</version>
-			<scope>compile</scope>
 		</dependency>
 
 
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-core</artifactId>
@@ -87,10 +80,13 @@
 			<artifactId>cucumber-picocontainer</artifactId>
 			<version>7.10.1</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.7.1</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
-
-
 	<build>
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven
 			defaults (may be moved to parent pom) -->
@@ -114,6 +110,11 @@
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>2.22.1</version>
+					<configuration>
+						<includes>
+							<include>**/*Runner.java</include>
+						</includes>
+					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-jar-plugin</artifactId>
@@ -140,4 +141,5 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
 </project>

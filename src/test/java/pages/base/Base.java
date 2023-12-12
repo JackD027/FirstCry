@@ -6,19 +6,15 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeAll;
 import io.cucumber.java.After;
-import io.cucumber.java.AfterAll;
+import io.cucumber.java.Before;
 
-
-public class Base {
+public class Base{
 	
 	String baseURL;
 	public static WebDriver driver;
+	
 	
 	public void LoadProperties() throws IOException {
         FileReader reader = new FileReader(".\\src\\test\\resources\\application.properties");

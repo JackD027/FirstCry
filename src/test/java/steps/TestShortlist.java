@@ -59,7 +59,7 @@ public class TestShortlist {
 
 	@Then("I click on ShortList Icon")
 	public void i_click_on_short_list_icon() throws InterruptedException {
-		loggedInPage.selectshoesize();
+		//loggedInPage.selectshoesize();
 	    LoggedInPage.ShortListBTN.click();
 	    Thread.sleep(2000);
 	}

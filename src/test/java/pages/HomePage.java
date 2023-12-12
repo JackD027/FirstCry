@@ -17,7 +17,6 @@ public class HomePage{
 	public WebElement loginElement;
 
 	public HomePage(WebDriver driver) {
-	    super();
 	    this.driver = driver;
 	    PageFactory.initElements(driver, this);
 	}
