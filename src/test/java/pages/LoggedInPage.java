@@ -26,21 +26,20 @@ public class LoggedInPage {
 	public WebElement profileEmail;
 	
 	@FindBy(xpath = "//a[@href='https://www.firstcry.com/footwear/6/170?scat=170@~416@@@@@@@@@1@0@20@@@@@@@@@@&ref2=menu_dd_footwear_casual-shoes_H' and @title='Casual Shoes' and @class='M13_75']")
-	public static WebElement CasualShoes;
+	public WebElement casualShoes;
 
-	
 
 	@FindBy(xpath = "(//span[@class='size-option pos-rel2stat R14_42'])[1]")
 	public static WebElement SelectSize;
 
 	@FindBy(xpath = "(//span[@class='M16_white'])[4]")
-	public static WebElement AddToCartBTN;
+	public WebElement addToCartBtn;
 	
 	@FindBy(xpath = "(//li[@class='M14_42 categry'])[3]/child::a")
 	public static WebElement footwear;
 	
 	@FindBy(xpath = "//*[@id='mbc']")
-	public static WebElement goToCart;
+	public WebElement goToCart;
 	
 	@FindBy(xpath = "//*[@id=\"productlist\"]/div/div[2]/div[2]/div[4]/span[2]")
 	public static WebElement cartItemCount;
@@ -53,8 +52,10 @@ public class LoggedInPage {
 	
 	@FindBy(xpath = "(//span[@class='anch'])[2]")
 	public static WebElement storesAndPreSchool;
+	
 	@FindBy(xpath = "(//div[@class='list_img wifi'])[1]")
-	public static WebElement ProductLink;
+	public WebElement product;
+	
 	@FindBy(xpath = "//a[@href='https://www.firstcryintellitots.com/preschool-locator/?ref2=topstrip\' and @class='R12_61']")
 	public static WebElement preSchoolElement;
 	
@@ -67,10 +68,13 @@ public class LoggedInPage {
 	@FindBy(xpath = "//span[@class='search-button']")
 	public WebElement searchBtn;
 	
-	@FindBy(xpath = "//input[@id='childFnLName']")
+	@FindBy(xpath = "(//div[@title='Edit'])[3]")
+	public WebElement editButton;
+	
+	@FindBy(xpath = "//input[@id='childName_1']")
 	public WebElement name;
 	
-	@FindBy(xpath = "(//div[@class='sprite-ac sp_cal'])[2]")
+	@FindBy(xpath = "(//div[@class='sprite-ac sp_cal'])[4]")
 	public WebElement dob;
 	
 	@FindBy(xpath = "/html/body/div[1]/div/div[2]/div/span[1]")
@@ -85,35 +89,33 @@ public class LoggedInPage {
 	@FindBy(xpath = "/html/body/div[1]/div/div[3]")
 	public WebElement goRight;
 	
-	@FindBy(xpath = "//div[@id='childGenderGirl']")
+	@FindBy(xpath = "//div[@id='UchildGenderGirl']")
 	public WebElement girlCheck;
 	
-	@FindBy(xpath = "//div[@id='childGenderBoy']")
+	@FindBy(xpath = "//div[@id='UchildGenderBoy']")
 	public WebElement boyCheck;
 	
-	@FindBy(xpath = "//*[@id='weight']")
+	@FindBy(xpath = "//*[@id='editWeight']")
 	public WebElement weight;
 	
-	@FindBy(xpath = "//*[@id='height']")
+	@FindBy(xpath = "//*[@id='editHeight']")
 	public WebElement height;
 	
-	@FindBy(xpath = "//*[@id='saveChild']")
+	@FindBy(xpath = "//*[@id='btn_1']")
 	public WebElement submitDetailsBtn;
 	
 	@FindBy(xpath = "//div[@id='placeorder_btn']")
 	public WebElement placeOrderBtn;
 	
-	@FindBy(xpath = "//*[@id='codrow']/span[2]")
+	@FindBy(xpath = "//*[@id='codrow']")
 	public WebElement selectCOD;
 	
-	@FindBy(xpath = "/html/body/form/div[4]/section[2]/div/div[2]/div[18]/div[3]/div[7]")
-	public WebElement orderWithCOD;
+//	@FindBy(xpath = "(//*[@id=\"BtnCodPayNow\"]/span/span[2])[2]")
+//	public WebElement orderWithCOD;
 	
-	@FindBy(xpath = "//*[@id='webklipper-publisher-widget-container-notification-close-div']/div/span")
-	public WebElement closeDialogBox;
+	@FindBy(xpath = "(//*[@id=\"BtnCodPayNow\"]/span/span[2])[2]")
+	public WebElement orderValue;
 	
-	@FindBy(xpath = "//*[@id='orderMessage']/div[1]/div[1]")
-	public WebElement orderStatus;
 	
 	public LoggedInPage(WebDriver driver) {
 	    this.driver = driver;
@@ -165,18 +167,18 @@ public class LoggedInPage {
 		Thread.sleep(2000);
 	}
 	
-	public void selectDOB(String dayString ,String monthString, String yearString) {
+	public void selectDOB(String dayString ,String monthString, String yearString) throws InterruptedException {
 		dob.click();
 		
-		//select year 
+		//select year                                   
 		while(Integer.valueOf(year.getText())>Integer.valueOf(yearString)){
 			goLeft.click();
-		}
+		}                    
 		while(Integer.valueOf(year.getText())<Integer.valueOf(yearString)){
 			goRight.click();
 		}
 		
-		//select month
+		//select month                                   Dec           May
 		int clicks = calculateMonthDifferenceLinear(month.getText(), monthString);
 		if(clicks>0) {
 			for(int i=0;i<clicks;i++) {
@@ -188,19 +190,20 @@ public class LoggedInPage {
 				goLeft.click();
 			}
 		}
-		
+		Thread.sleep(5000);
 		//select date
 		 WebElement dayElement = driver.findElement(By.xpath("//div[text()='" + dayString + "']"));
 		 dayElement.click();
+		 Thread.sleep(5000);
 	}
 
 	
 	
 	private static int calculateMonthDifferenceLinear(String currentMonth, String targetMonth) {
         String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-        int currentIndex = getIndex(months, currentMonth);
-        int targetIndex = getIndex(months, targetMonth);
-        int difference = targetIndex - currentIndex;
+        int currentIndex = getIndex(months, currentMonth); //12
+        int targetIndex = getIndex(months, targetMonth);  //5
+        int difference = targetIndex - currentIndex; //5-12 =-7
         return difference;
     }
 
@@ -221,20 +224,4 @@ public class LoggedInPage {
 	public String getProfileEmail() {
 		return profileEmail.getText();
 	}
-
-	public void clickshoes() {
-		CasualShoes.click();
-	}
-
-	public void clickproduct() {
-		ProductLink.click();
-	}
-
-	public void selectshoesize() {
-		SelectSize.click();
-	}
-
-	public void addtocart() {
-		AddToCartBTN.click();
-	}	
 }

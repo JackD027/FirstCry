@@ -54,11 +54,9 @@ public class TestCheckout {
 	}
 
 	@Then("I select COD and then submit to check for the status order placed")
-	public void i_select_cod_and_then_submit_to_check_for_the_status_order_placed() {
-//		loggedInPage.orderWithCOD.click();
-//		loggedInPage.placeOrderBtn.click();
-//		loggedInPage.closeDialogBox.click();
-//	    Assert.assertEquals(loggedInPage.orderStatus.getText()," Order Placed Successfully");
-		System.out.println("done");
+	public void i_select_cod_and_then_submit_to_check_for_the_status_order_placed() throws InterruptedException {
+		loggedInPage.selectCOD.click();
+		System.out.println(loggedInPage.orderValue.getText());
+		Thread.sleep(5000);
 	}
 }

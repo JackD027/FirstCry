@@ -51,6 +51,8 @@ public class TestEditProfile {
 
 	@Given("I edit the profile data {string},{string},{string},{string},{string},{string},{string}")
 	public void i_edit_the_profile_address(String name, String day, String month, String year, String gender, String height, String weight) throws InterruptedException {
+		loggedInPage.editButton.click();
+		Thread.sleep(2000);
 		loggedInPage.name.clear();
 		loggedInPage.name.sendKeys(name);
 	    loggedInPage.selectDOB(day,month,year);

@@ -48,12 +48,12 @@ public class TestShortlist {
 	public void i_click_on_footwear_and_click_on_casualshoes_product() throws InterruptedException {
 		loggedInPage.goToFootwear();
 	    Thread.sleep(2000);
-	    loggedInPage.clickshoes();
+	    loggedInPage.casualShoes.click();
 	}
 
 	@Then("I click on Products on the page")
 	public void i_click_on_products_on_the_page() throws InterruptedException {
-		loggedInPage.clickproduct();
+		loggedInPage.product.click();
 		loggedInPage.goToProductPage();
 	}
 

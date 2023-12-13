@@ -30,11 +30,13 @@ public class TestLogin{
         email = props.getProperty("email");
     }
 
+	//load the pages with same driver
 	@Given("I open the application")
 	public void i_open_the_application() throws IOException {
 		homePage = new HomePage(Base.getDriver());
         loginPage = new LoginPage(Base.getDriver());
         loggedInPage = new LoggedInPage(Base.getDriver());
+        //then copy the email property into local String email
         LoadProperties();
 	}
 

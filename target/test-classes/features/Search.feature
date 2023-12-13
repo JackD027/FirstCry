@@ -9,3 +9,4 @@ Feature:To test Search Functionality
     Examples: 
       | productName|
       | "Footwear" |
+      |   "Shoes"  |
