@@ -39,6 +39,7 @@
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
 		</ul>
 		<!-- report name -->
@@ -48,7 +49,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Dec 13, 2023 04:54:01 PM</span>
+			<span class='label blue darken-3 suite-start-time'>Dec 14, 2023 03:50:43 PM</span>
 			</a>
 		</ul>
 	</div>
@@ -63,7 +64,7 @@
 				<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+										<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -107,12 +108,12 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='$100%'>
-                    <span class='strong'>1</span> features passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='$0%'>
+                    <span class='strong'>0</span> features passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
-                    0</span> features failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='100%'>
+                    1</span> features failed, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> skipped
                 </div>
@@ -125,12 +126,12 @@
                     <canvas id='child-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
+                    <span class='tooltipped' data-position='top' data-tooltip='50%'>
                     <span class='strong'>1</span> scenarios passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
-                    0</span> scenarios failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='50%'>
+                    1</span> scenarios failed, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> skipped, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -145,14 +146,14 @@
                     <canvas id='grandchild-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
-                    <span class='strong'>7</span> steps passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='86%'>
+                    <span class='strong'>13</span> steps passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
-                    0</span> steps failed, 
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
-                    0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='6%'>
+                    1</span> steps failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='6%'>
+                    1</span> skipped, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> others
                 </div>
@@ -173,11 +174,11 @@
 	<div class='subview-left left'>
 		<div class='view-summary'>
 			<ul id='test-collection' class='test-collection'>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>To test Login Functionality</span>
-						<span class='test-time'>Dec 13, 2023 04:54:03 PM</span>
-						<span class='test-status right pass'>Pass</span>
+						<span class='test-time'>Dec 14, 2023 03:50:45 PM</span>
+						<span class='test-status right fail'>Fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class="sr-filters bdd-filters">
@@ -187,11 +188,11 @@
 	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
 </div>
 
-<div class='scenario node' test-id='2' status='pass'>
+<div class='scenario node' test-id='2' status='fail'>
 
-	<span class='duration right label'>00 00 59.330</span>
+	<span class='duration right label'>00 01 10.792</span>
 	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Login with email</div>
+		<div class="scenario-name"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span> Scenario: Login with email</div>
 	</div>
 	
 	
@@ -222,12 +223,299 @@
 
 
 		</li>
-		<li test-id='9' class='node then Pass' status='Pass'>
+		<li test-id='9' class='node then Fail' status='Fail'>
+			<div class="step-name" title="(steps.TestLogin.i_go_to_the_my_account_then_my_profile())"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Then I go to the My Account then My Profile</div>
+
+
+					<textarea disabled class="code-block">org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0141830444fdbd811bdc715c2d2082c1, actions {actions=[org.openqa.selenium.interactions.Sequence@6637a365]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.71, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: C:\Users\SHUBHE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:25894}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:25894/devtoo..., se:cdpVersion: 120.0.6099.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0141830444fdbd811bdc715c2d2082c1
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:415)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:178)
+	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:341)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:200)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:200)
+	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:341)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:218)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:68)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:213)
+	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:341)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:332)
+	at org.openqa.selenium.json.Json.toJson(Json.java:47)
+	at org.openqa.selenium.json.Json.toJson(Json.java:41)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:273)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:127)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:179)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:604)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:605)
+	at pages.LoggedInPage.goToProfile(LoggedInPage.java:130)
+	at steps.TestLogin.i_go_to_the_my_account_then_my_profile(TestLogin.java:67)
+	at ✽.I go to the My Account then My Profile(file:///D:/eclipse/FirstCry/src/test/resources/features/0_Login.feature:9)
+	Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: driver.version: RemoteWebDriver
+		at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:357)
+		at org.openqa.selenium.json.Json.toJson(Json.java:45)
+		at org.openqa.selenium.json.Json.toJson(Json.java:41)
+		at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:273)
+		at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:127)
+		at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:179)
+		at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+		at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+		at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+		at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:604)
+		at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:605)
+		at pages.LoggedInPage.goToProfile(LoggedInPage.java:130)
+		at steps.TestLogin.i_go_to_the_my_account_then_my_profile(TestLogin.java:67)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+		at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+		at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+		at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+		at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+		at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+		at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+		at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:85)
+		at io.cucumber.core.runner.TestStep.run(TestStep.java:57)
+		at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+		at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+		at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+		at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+		at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+		at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+		at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+		at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+		at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+		at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+		at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+		at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+		at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+		at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+		at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+		at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+		at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+		at org.testng.TestRunner.privateRun(TestRunner.java:829)
+		at org.testng.TestRunner.run(TestRunner.java:602)
+		at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+		at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+		at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+		at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+		at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+		at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+		at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+		at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+		at org.testng.TestNG.runSuites(TestNG.java:1099)
+		at org.testng.TestNG.run(TestNG.java:1067)
+		at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+		at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+		at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:411)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:178)
+	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:341)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:200)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:200)
+	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:341)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:218)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:68)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:213)
+	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:341)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:332)
+	at org.openqa.selenium.json.Json.toJson(Json.java:47)
+	at org.openqa.selenium.json.Json.toJson(Json.java:41)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:273)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:127)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:179)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:604)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:605)
+	at pages.LoggedInPage.goToProfile(LoggedInPage.java:130)
+	at steps.TestLogin.i_go_to_the_my_account_then_my_profile(TestLogin.java:67)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:85)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:57)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@class='anch myacc_2']"}
+  (Session info: chrome=120.0.6099.71)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0141830444fdbd811bdc715c2d2082c1, findElement {using=xpath, value=//span[@class='anch myacc_2']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.71, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: C:\Users\SHUBHE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:25894}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:25894/devtoo..., se:cdpVersion: 120.0.6099.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0141830444fdbd811bdc715c2d2082c1
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy30.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:275)
+	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:224)
+	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:72)
+	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:81)
+	... 87 more
+</textarea>
+		</li>
+		<li test-id='10' class='node and Skip' status='Skip'>
+			<div class="step-name" title="(steps.TestLogin.verify_the_email())"><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And verify the email</div>
+
+
+					<div class="node-step">Step skipped</div>
+		</li>
+		<li test-id='11' class='node * Pass' status='Pass'>
+			<div class="step-name" title="(AFTER)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>pages.base.Base.takeScreenshotOnFail(io.cucumber.java.Scenario)</div>
+
+
+					<div class="node-step">screenshot</div>
+					<div class='screenshots'>
+						<img width='80' height='40' onerror='this.style.display="none"' data-featherlight='../embedded1.png' src='../embedded1.png'>
+					</div>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='13' status='pass'>
+
+	<span class='duration right label'>00 01 01.519</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Login with email</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='15' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(steps.TestLogin.i_open_the_application())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given I open the application</div>
+
+
+		</li>
+		<li test-id='16' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(steps.TestLogin.click_on_login())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And Click on Login</div>
+
+
+		</li>
+		<li test-id='17' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(steps.TestLogin.i_give_the_email())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When I give the email</div>
+
+
+		</li>
+		<li test-id='18' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(steps.TestLogin.click_continue())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And Click continue</div>
+
+
+		</li>
+		<li test-id='19' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(steps.TestLogin.give_the_otp_and_click_submit())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And Give the OTP and click Submit</div>
+
+
+		</li>
+		<li test-id='20' class='node then Pass' status='Pass'>
 			<div class="step-name" title="(steps.TestLogin.i_go_to_the_my_account_then_my_profile())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then I go to the My Account then My Profile</div>
 
 
 		</li>
-		<li test-id='10' class='node and Pass' status='Pass'>
+		<li test-id='21' class='node and Pass' status='Pass'>
 			<div class="step-name" title="(steps.TestLogin.verify_the_email())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And verify the email</div>
 
 
@@ -258,7 +546,291 @@
 	</div>
 	<!-- subview right -->
 </div>
-<!-- test view --><div id='dashboard-view' class='view hide'>
+<!-- test view --><div id='exception-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='exception-collection' class='exception-collection'>
+				<li class='exception displayed active'>
+					<div class='exception-heading'>
+						<span class='exception-name'>org.openqa.selenium.json.JsonException</span>
+						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+					</div>
+					<div class='exception-content hide'>
+						<div class='exception-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>StackTrace</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 14, 2023 03:51:50 PM</td>
+										<td class='linked' test-id='9'>Then I go to the My Account then My Profile</td>
+										<td>
+											<textarea disabled class="code-block">org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0141830444fdbd811bdc715c2d2082c1, actions {actions=[org.openqa.selenium.interactions.Sequence@6637a365]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.71, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: C:\Users\SHUBHE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:25894}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:25894/devtoo..., se:cdpVersion: 120.0.6099.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0141830444fdbd811bdc715c2d2082c1
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:415)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:178)
+	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:341)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:200)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:200)
+	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:341)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:218)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:68)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:213)
+	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:341)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:332)
+	at org.openqa.selenium.json.Json.toJson(Json.java:47)
+	at org.openqa.selenium.json.Json.toJson(Json.java:41)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:273)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:127)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:179)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:604)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:605)
+	at pages.LoggedInPage.goToProfile(LoggedInPage.java:130)
+	at steps.TestLogin.i_go_to_the_my_account_then_my_profile(TestLogin.java:67)
+	at ✽.I go to the My Account then My Profile(file:///D:/eclipse/FirstCry/src/test/resources/features/0_Login.feature:9)
+	Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: driver.version: RemoteWebDriver
+		at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:357)
+		at org.openqa.selenium.json.Json.toJson(Json.java:45)
+		at org.openqa.selenium.json.Json.toJson(Json.java:41)
+		at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:273)
+		at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:127)
+		at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:179)
+		at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+		at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+		at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+		at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:604)
+		at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:605)
+		at pages.LoggedInPage.goToProfile(LoggedInPage.java:130)
+		at steps.TestLogin.i_go_to_the_my_account_then_my_profile(TestLogin.java:67)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+		at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+		at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+		at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+		at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+		at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+		at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+		at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:85)
+		at io.cucumber.core.runner.TestStep.run(TestStep.java:57)
+		at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+		at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+		at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+		at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+		at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+		at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+		at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+		at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+		at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+		at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+		at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+		at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+		at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+		at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+		at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+		at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+		at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+		at org.testng.TestRunner.privateRun(TestRunner.java:829)
+		at org.testng.TestRunner.run(TestRunner.java:602)
+		at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+		at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+		at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+		at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+		at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+		at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+		at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+		at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+		at org.testng.TestNG.runSuites(TestNG.java:1099)
+		at org.testng.TestNG.run(TestNG.java:1067)
+		at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+		at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+		at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:411)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:178)
+	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:341)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:200)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:200)
+	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:341)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:218)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:68)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:213)
+	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:341)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:332)
+	at org.openqa.selenium.json.Json.toJson(Json.java:47)
+	at org.openqa.selenium.json.Json.toJson(Json.java:41)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:273)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:127)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:179)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:604)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:605)
+	at pages.LoggedInPage.goToProfile(LoggedInPage.java:130)
+	at steps.TestLogin.i_go_to_the_my_account_then_my_profile(TestLogin.java:67)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:85)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:57)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@class='anch myacc_2']"}
+  (Session info: chrome=120.0.6099.71)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0141830444fdbd811bdc715c2d2082c1, findElement {using=xpath, value=//span[@class='anch myacc_2']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.71, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: C:\Users\SHUBHE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:25894}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:25894/devtoo..., se:cdpVersion: 120.0.6099.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0141830444fdbd811bdc715c2d2082c1
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy30.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:275)
+	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:224)
+	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:72)
+	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:81)
+	... 87 more
+</textarea>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='exception-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- exception view --><div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
 		<h5>Dashboard</h5>
 
@@ -272,31 +844,31 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>1</div>
+					<div class='panel-lead'>2</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>7</div>
+					<div class='panel-lead'>15</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Dec 13, 2023 04:54:01 PM</div>
+					<div class='panel-lead'>Dec 14, 2023 03:50:43 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Dec 13, 2023 04:55:02 PM</div>
+			 		<div class='panel-lead'>Dec 14, 2023 03:52:59 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>00 01 01.115</div>
+					<div class='panel-lead'>00 02 16.026</div>
 				</div>
 			</div>
 		</div>
@@ -308,34 +880,34 @@
 		<script>
 			var statusGroup = {
                 parentCount: 1,
-				passParent: 1,
-				failParent: 0,
+				passParent: 0,
+				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				childCount: 1,
+				childCount: 2,
 				passChild: 1,
-				failChild: 0,
+				failChild: 1,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				grandChildCount: 7,
-				passGrandChild: 7,
-				failGrandChild: 0,
+				grandChildCount: 15,
+				passGrandChild: 13,
+				failGrandChild: 1,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 0,
+				skipGrandChild: 1,
 				infoGrandChild: 0,
 			};
 			</script>
 		
 		<script>
 			var timeline = {
-			        "To test Login Functionality":59.337
+			        "To test Login Functionality":133.992
 			};
 		</script>
 		

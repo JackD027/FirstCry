@@ -1,5 +1,7 @@
 package pages.base;
 
+import java.io.File;
+
 //import java.io.FileReader;
 //import java.io.IOException;
 //import java.util.Properties;
@@ -43,9 +45,10 @@ package pages.base;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Time;
 import java.util.Properties;
 
-
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -87,7 +90,14 @@ public class Base{
 		TakesScreenshot ts=(TakesScreenshot)driver;
         byte[] src =ts.getScreenshotAs(OutputType.BYTES);
        s.attach(src, "image/png","screenshot");
-	   }
+       
+       File srcFile = ts.getScreenshotAs(OutputType.FILE);
+		  try {
+		   FileUtils.copyFile(srcFile, new File("./ScreenShots/"+s.getName()+"-Failed.jpg"));
+		  } catch (IOException e) {
+		   e.printStackTrace();
+		  }
+		 }
     }
 
     public static WebDriver getDriver() {

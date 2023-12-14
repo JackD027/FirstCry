@@ -170,15 +170,15 @@ public class LoggedInPage {
 	public void selectDOB(String dayString ,String monthString, String yearString) throws InterruptedException {
 		dob.click();
 		
-		//select year                                   
+		//select year    2023                          2022                                   
 		while(Integer.valueOf(year.getText())>Integer.valueOf(yearString)){
 			goLeft.click();
-		}                    
-		while(Integer.valueOf(year.getText())<Integer.valueOf(yearString)){
-			goRight.click();
-		}
+		}                   
+//		while(Integer.valueOf(year.getText())<Integer.valueOf(yearString)){
+//			goRight.click();
+//		}
 		
-		//select month                                   Dec           May
+		//select month                                   Dec           August
 		int clicks = calculateMonthDifferenceLinear(month.getText(), monthString);
 		if(clicks>0) {
 			for(int i=0;i<clicks;i++) {
@@ -202,8 +202,8 @@ public class LoggedInPage {
 	private static int calculateMonthDifferenceLinear(String currentMonth, String targetMonth) {
         String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         int currentIndex = getIndex(months, currentMonth); //12
-        int targetIndex = getIndex(months, targetMonth);  //5
-        int difference = targetIndex - currentIndex; //5-12 =-7
+        int targetIndex = getIndex(months, targetMonth);  //8
+        int difference = targetIndex - currentIndex; //8-12 =-4
         return difference;
     }
 

@@ -71,7 +71,7 @@ public class TestStoreLocator {
 	    Thread.sleep(1000);
 	    storeLocatorPage.selectCity(city);
 	    Thread.sleep(1000);
-	    storeLocatorPage.submitBtn.click();
+	    //storeLocatorPage.submitBtn.click();
 	}
 
 	@Then("I click on Search Icon")

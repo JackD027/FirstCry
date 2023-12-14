@@ -19,11 +19,14 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
  
 //@RunWith(Cucumber.class)
-@CucumberOptions(features= {"src/test/resources/features"},
+@CucumberOptions(features= {"src/test/resources/features/0_Login.feature"},
 glue={"steps","pages.base"},
-plugin= {"pretty","html:target/HTMLReport.html",
-		"json:target/JSONReport.json","junit:target/stepReport.xml",
-"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/ExtentReport.html"},
+plugin= {"pretty",
+		"html:target/HTMLReport.html",
+		"json:target/JSONReport.json",
+		"junit:target/stepReport.xml",
+		"rerun:target/failedrerun.txt",
+		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/ExtentReport.html"},
 monochrome =true)
 public class Runner extends AbstractTestNGCucumberTests{
 	

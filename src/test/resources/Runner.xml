@@ -7,7 +7,7 @@
 	<test name="Test Runner using XML">
 		<classes>
 			<class name="runner.Runner"></class>
-
+			<class name="runner.RunnerFailed"></class>
 		</classes>
 	</test>
 </suite>

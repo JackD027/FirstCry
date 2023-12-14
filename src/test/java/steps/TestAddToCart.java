@@ -69,7 +69,7 @@ public class TestAddToCart {
 
 	@Then("I click on Add to cart page")
 	public void i_click_on_add_to_cart_page() throws InterruptedException {
-		loggedInPage.addToCartBtn.click();;
+		loggedInPage.addToCartBtn.click();
 		Thread.sleep(2000);
 	}
 
