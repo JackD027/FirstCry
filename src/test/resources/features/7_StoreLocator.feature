@@ -10,4 +10,5 @@ Feature: To test store locator functionality
     Examples:
       | StoreType | State | City |
       |FirstCry|Uttar Pradesh|Prayagraj Civil Lines|
+      |FirstCry|Karnataka|Bangalore|
 

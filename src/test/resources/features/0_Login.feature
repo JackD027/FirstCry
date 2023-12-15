@@ -1,6 +1,6 @@
 Feature: To test Login Functionality
 
-  Scenario Outline: Login with email
+  Scenario: Login with email
     Given I open the application
     And Click on Login 
     When I give the email

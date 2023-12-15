@@ -1,6 +1,6 @@
 Feature: To test Shortlist functionality
 
-	Scenario Outline: Test shortlist product after login
+	Scenario: Test shortlist product after login
 
 		Given I open the browser and enter URL of Firstcry	
 		Then I click on login link and enter the email

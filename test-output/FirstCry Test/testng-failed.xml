@@ -9,10 +9,17 @@
       <class name="runner.Runner">
         <methods>
           <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0 6"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
         </methods>
       </class> <!-- runner.Runner -->
+      <class name="runner.RunnerFailed">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="1"/>
+        </methods>
+      </class> <!-- runner.RunnerFailed -->
     </classes>
   </test> <!-- Test Runner using XML(failed) -->
 </suite> <!-- Failed suite [FirstCry Test] -->

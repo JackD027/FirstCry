@@ -1,0 +1,42 @@
+2023-12-15 08:12:311 INFO  TestLogin:44 - User opened Application in browser
+2023-12-15 08:12:13 INFO  TestLogin:50 - user clicked Login button
+2023-12-15 08:12:442 INFO  TestLogin:56 - user entered email
+2023-12-15 08:12:316 INFO  TestLogin:63 - user clicked on continue button
+2023-12-15 08:12:466 INFO  TestLogin:70 - user enterd OTP and clicked on verify
+2023-12-15 08:12:786 INFO  TestSearch:41 - User opened Application in browser
+2023-12-15 08:12:643 INFO  TestSearch:52 - User entered into loggedin page
+2023-12-15 08:12:422 INFO  TestSearch:59 - User entered the product name in search bar
+2023-12-15 08:12:320 INFO  TestSearch:66 - User clicked on Serach icon
+2023-12-15 08:12:31 INFO  TestSearch:41 - User opened Application in browser
+2023-12-15 08:12:638 INFO  TestSearch:52 - User entered into loggedin page
+2023-12-15 08:12:29 INFO  TestSearch:59 - User entered the product name in search bar
+2023-12-15 08:12:53 INFO  TestSearch:66 - User clicked on Serach icon
+2023-12-15 08:12:158 INFO  TestAddToCart:42 - User opened Application in browser
+2023-12-15 08:12:317 INFO  TestAddToCart:53 - User entered into Logged in page
+2023-12-15 08:12:507 INFO  TestAddToCart:61 - User checks the title of page
+2023-12-15 08:12:482 INFO  TestAddToCart:69 - User hover over footwear and selected Casualshoes
+2023-12-15 08:12:999 INFO  TestAddToCart:76 - User selected the product
+2023-12-15 08:12:290 INFO  TestAddToCart:84 - User clicked on add to cart button
+2023-12-15 08:12:687 INFO  TestAddToCart:98 - User went to cart and checked the product
+2023-12-15 08:12:311 INFO  TestCheckout:42 - User opened Application in browser
+2023-12-15 08:12:184 INFO  TestCheckout:53 - user entered to loggedin page
+2023-12-15 08:12:700 INFO  TestCheckout:61 - user clicked on cart
+2023-12-15 08:12:94 INFO  TestCheckout:69 - user proceed with checkout process
+2023-12-15 08:12:607 INFO  TestPreSchoolLocator:44 - User opened Application in browser
+2023-12-15 08:12:556 INFO  TestPreSchoolLocator:53 - User entered Email and clicked on continue
+2023-12-15 08:12:132 INFO  TestPreSchoolLocator:61 - User entered OTP and verified
+2023-12-15 08:12:979 INFO  TestPreSchoolLocator:69 - User Hover over on store and selected preschool
+2023-12-15 08:12:277 INFO  TestPreSchoolLocator:81 - User selected the required locations
+2023-12-15 08:12:427 INFO  TestPreSchoolLocator:88 - User validate the location
+2023-12-15 08:12:166 INFO  TestStoreLocator:49 - User opened Application in browser
+2023-12-15 08:12:587 INFO  TestStoreLocator:60 - User entered into Loggedin page
+2023-12-15 08:12:737 INFO  TestStoreLocator:67 - User clicked on Store sction and Selected store from menu
+2023-12-15 08:12:814 INFO  TestStoreLocator:82 - User Selected the required location of store
+2023-12-15 08:12:969 INFO  TestStoreLocator:89 - User Clicked on search button
+2023-12-15 08:12:794 INFO  TestLogin:44 - User opened Application in browser
+2023-12-15 08:12:510 INFO  TestLogin:50 - user clicked Login button
+2023-12-15 08:12:829 INFO  TestLogin:56 - user entered email
+2023-12-15 08:12:251 INFO  TestLogin:63 - user clicked on continue button
+2023-12-15 08:12:816 INFO  TestLogin:70 - user enterd OTP and clicked on verify
+2023-12-15 08:12:514 INFO  TestLogin:76 - user clicked on My profile
+2023-12-15 08:12:625 INFO  TestLogin:83 - user verified the email

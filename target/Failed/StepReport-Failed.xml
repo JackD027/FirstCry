@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="61.841">
-    <testcase classname="To test Login Functionality" name="Login with email" time="61.525">
-        <system-out><![CDATA[Given I open the application................................................passed
-And Click on Login..........................................................passed
-When I give the email.......................................................passed
-And Click continue..........................................................passed
-And Give the OTP and click Submit...........................................passed
-Then I go to the My Account then My Profile.................................passed
-And verify the email........................................................passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="81.031">
+    <testcase classname="To test Edit Profile functionality" name="Test edit profile after login" time="80.355">
+        <system-out><![CDATA[Given I open the browser and enter the application URL......................passed
+Then I click on the login link and enter the email and submit OTP...........passed
+Then I go to the My Account then My Profile Section.........................passed
+And I edit the profile data "Shubham","11","May","2021","Male","56","120"...passed
 ]]></system-out>
     </testcase>
 </testsuite>

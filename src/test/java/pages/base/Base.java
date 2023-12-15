@@ -49,6 +49,7 @@ import java.sql.Time;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -62,7 +63,6 @@ public class Base{
 	
 	String baseURL;
 	public static WebDriver driver;
-	
 	
 	public void LoadProperties() throws IOException {
         FileReader reader = new FileReader(".\\src\\test\\resources\\application.properties");

@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
 glue={"steps","pages.base"},
 plugin= {"pretty",
 		"html:target/Failed/HTMLReport-Failed.html",
-		"json:target/Failed/JSONReport-Failed.json",
+		"json:targstatic Logger log = Loggerhelper.getLogger(TestAddToCart.class);et/Failed/JSONReport-Failed.json",
 		"junit:target/Failed/StepReport-Failed.xml",
 		"rerun:target/failedrerun.txt",
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/Failed/ExtentReport-Failed.html"},

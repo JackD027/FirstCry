@@ -178,14 +178,14 @@ public class LoggedInPage {
 //			goRight.click();
 //		}
 		
-		//select month                                   Dec           August
+		//select month                                   Dec           May
 		int clicks = calculateMonthDifferenceLinear(month.getText(), monthString);
 		if(clicks>0) {
 			for(int i=0;i<clicks;i++) {
 				goRight.click();
 			}
 		}
-		else {
+		else {                
 			for(int i=0;i<Integer.valueOf(clicks*-1);i++) {
 				goLeft.click();
 			}
@@ -202,8 +202,8 @@ public class LoggedInPage {
 	private static int calculateMonthDifferenceLinear(String currentMonth, String targetMonth) {
         String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         int currentIndex = getIndex(months, currentMonth); //12
-        int targetIndex = getIndex(months, targetMonth);  //8
-        int difference = targetIndex - currentIndex; //8-12 =-4
+        int targetIndex = getIndex(months, targetMonth);  //5
+        int difference = targetIndex - currentIndex; //5-12 =-7
         return difference;
     }
 

@@ -4,10 +4,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import listeners.Loggerhelper;
 import pages.HomePage;
 import pages.LoggedInPage;
 import pages.LoginPage;
@@ -23,6 +25,8 @@ public class TestPreSchoolLocator {
 	
 	String email;
 	
+	static Logger log = Loggerhelper.getLogger(TestPreSchoolLocator.class);
+	
 	public void LoadProperties() throws IOException {
         FileReader reader = new FileReader(".\\src\\test\\resources\\application.properties");
         Properties props = new Properties();
@@ -37,6 +41,7 @@ public class TestPreSchoolLocator {
         loggedInPage = new LoggedInPage(Base.getDriver());
         preSchoolPage = new PreSchoolPage(Base.driver);
         LoadProperties();
+        log.info("User opened Application in browser");
 	}
 
 	@Then("I click on login link and enter the email then click continue")
@@ -45,18 +50,24 @@ public class TestPreSchoolLocator {
         loginPage.email.sendKeys(email);
         Thread.sleep(2000);
         loginPage.continueBtn.click();
+        log.info("User entered Email and clicked on continue");
+        
 	}
 
 	@Then("I give the OTP and click submit")
 	public void i_give_the_otp_and_click_submit() throws InterruptedException {
 		Thread.sleep(30000);
         loginPage.verifyOtpBtn.click();
+        log.info("User entered OTP and verified");
+        
 	}
 
 	@Then("I hover on Stores and PreSchool then Select Find PreSchool")
 	public void i_hover_on_stores_and_pre_school_then_select_find_pre_school() throws InterruptedException {
 	    loggedInPage.goToPreSchoolPage();
 	    Thread.sleep(1000);
+	    log.info("User Hover over on store and selected preschool");
+	    
 	}
 
 	@Then("I click on PreSchool Locator location as {string}")
@@ -67,11 +78,14 @@ public class TestPreSchoolLocator {
 		Thread.sleep(1000);
 		preSchoolPage.findSchoolBtn.click();
 		Thread.sleep(5000);
+		 log.info("User selected the required locations");
 	}
 	
 	@Then("I validate the PreSchool location is {string}")
 	public void i_validate_the_preschool(String string) throws InterruptedException {
 		Assert.assertEquals(preSchoolPage.location.getText(), string);
 		preSchoolPage.goBack();
+		log.info("User validate the location");
+		
 	}
 }

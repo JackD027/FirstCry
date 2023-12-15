@@ -11,3 +11,4 @@ Feature: To test PreSchool Search Functionality
     Examples: 
       |    location   |
       |   "Prayagraj" |
+      |   "Bangalore" |

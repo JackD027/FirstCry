@@ -10,6 +10,7 @@ Feature: To test Edit Profile functionality
 		Examples:
 			|Name     |Day|Month|Year|Gender|Weight|Height|
 			|"Shubham"|"11"|"May"|"2021"|"Male"|"56"|"120"|
+			|"Abhi"|"22"|"March"|"2022"|"Female"|"60"|"130"|
 		 
 
     
